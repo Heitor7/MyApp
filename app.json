@@ -1,4 +1,5 @@
 {
   "name": "MyApp",
-  "displayName": "MyApp"
+  "displayName": "MyApp",
+  "description": "react native"
 }
