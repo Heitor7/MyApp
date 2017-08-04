@@ -4,14 +4,15 @@ import React from 'react';
 import {
     Text,
     View,
-    Image
+    Image,
 } from 'react-native';
 
 class ChatScreen extends React.Component {
+
     static navigationOptions = {
         title: 'Chat with Lucy',
         headerRight: <View>
-            <Image source={require('../../res/images/collect.png')} />
+            <Image style={{marginRight: 20}} source={require('../../res/images/collect.png')}/>
         </View>,
     };
 
