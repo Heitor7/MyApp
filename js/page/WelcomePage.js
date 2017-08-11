@@ -55,7 +55,7 @@ class WelcomePage extends React.Component {
     }
 };
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
     contentContainer: {
         width: GuideUtil.size.width * 3,
         height: GuideUtil.size.height,

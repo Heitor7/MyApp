@@ -7,14 +7,14 @@ import {
     StyleSheet,
 } from 'react-native';
 
-class MapScreen extends React.Component {
+class WorldPage extends React.Component {
 
     static navigationOptions = {
-        title: 'Map',
-        tabBarLabel: 'Map',
+        title: 'Food',
+        tabBarLabel: 'Food',
         tabBarIcon: () => (
             <Image
-                source={require('../../res/images/map.png')}
+                source={require('../../res/images/world.png')}
                 style={styles.icon}
             />
         ),
@@ -22,15 +22,15 @@ class MapScreen extends React.Component {
 
     render() {
         return (
-            <View style={styles.map}></View>
+            <View style={styles.world}></View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    map: {
+    world: {
         flex: 1,
-        backgroundColor: 'green',
+        backgroundColor: 'yellow',
     },
     icon: {
         width: 26,
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default MapScreen;
+export default WorldPage;

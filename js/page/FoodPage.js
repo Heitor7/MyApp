@@ -7,14 +7,14 @@ import {
     StyleSheet,
 } from 'react-native';
 
-class WorldScreen extends React.Component {
+class FoodPage extends React.Component {
 
     static navigationOptions = {
         title: 'Food',
         tabBarLabel: 'Food',
         tabBarIcon: () => (
             <Image
-                source={require('../../res/images/world.png')}
+                source={require('../../res/images/food.png')}
                 style={styles.icon}
             />
         ),
@@ -22,15 +22,15 @@ class WorldScreen extends React.Component {
 
     render() {
         return (
-            <View style={styles.world}></View>
+            <View style={styles.food}></View>
         );
     }
 }
 
 const styles = StyleSheet.create({
-    world: {
+    food: {
         flex: 1,
-        backgroundColor: 'yellow',
+        backgroundColor: 'orange',
     },
     icon: {
         width: 26,
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default WorldScreen;
+export default FoodPage;

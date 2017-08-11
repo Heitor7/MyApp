@@ -3,8 +3,8 @@
 import React from 'react';
 import {StackNavigator} from 'react-navigation';
 
-import HomeScreen from './HomeScreen';
-import ChatScreen from './ChatScreen';
+import HomePage from './HomePage';
+import ChatPage from './ChatPage';
 import WelcomePage from "./WelcomePage";
 
 class Root extends React.Component {
@@ -15,8 +15,8 @@ class Root extends React.Component {
 
 const MyApp = StackNavigator({
     Welcome: {screen: WelcomePage},
-    Home: {screen: HomeScreen},
-    Chat: {screen: ChatScreen},
+    Home: {screen: HomePage},
+    Chat: {screen: ChatPage},
 }, {
     initialRouteName: 'Welcome',
 });

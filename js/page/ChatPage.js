@@ -7,7 +7,7 @@ import {
     Image,
 } from 'react-native';
 
-class ChatScreen extends React.Component {
+class ChatPage extends React.Component {
 
     static navigationOptions = {
         title: 'Chat with Lucy',
@@ -25,4 +25,4 @@ class ChatScreen extends React.Component {
     }
 }
 
-export default ChatScreen;
+export default ChatPage;

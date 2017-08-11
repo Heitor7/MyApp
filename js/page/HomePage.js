@@ -9,11 +9,11 @@ import {
     StyleSheet,
 } from 'react-native';
 import {TabNavigator} from 'react-navigation';
-import FoodScreen from './FoodScreen';
-import MapScreen from './MapScreen';
-import WorldScreen from './WorldScreen';
+import FoodPage from './FoodPage';
+import MapPage from './MapPage';
+import WorldPage from './WorldPage';
 
-class HomeScreen extends React.Component {
+class HomePage extends React.Component {
 
     static navigationOptions = {
         title: 'Home',
@@ -53,16 +53,16 @@ const styles = StyleSheet.create({
 
 const HomeTab = TabNavigator({
     Home: {
-        screen: HomeScreen,
+        screen: HomePage,
     },
     Food: {
-        screen: FoodScreen,
+        screen: FoodPage,
     },
     Map: {
-        screen: MapScreen,
+        screen: MapPage,
     },
     World: {
-        screen: WorldScreen,
+        screen: WorldPage,
     },
 }, {
     initialRouteName: 'Home',
