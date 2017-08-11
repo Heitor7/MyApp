@@ -11,8 +11,9 @@ import {
 import TabNavigator from 'react-native-tab-navigator';
 
 class HomeScreen extends React.Component {
+
     static navigationOptions = {
-        title: 'Welcome',
+        title: 'Home',
     };
 
     constructor(props) {
