@@ -7,6 +7,11 @@ import HomeScreen from './HomeScreen';
 import ChatScreen from './ChatScreen';
 import WelcomePage from "./WelcomePage";
 
+class Root extends React.Component {
+    render() {
+        return <MyApp/>
+    }
+}
 
 const MyApp = StackNavigator({
     Welcome: {screen: WelcomePage},
@@ -15,11 +20,5 @@ const MyApp = StackNavigator({
 }, {
     initialRouteName: 'Welcome',
 });
-
-class Root extends React.Component {
-    render() {
-        return <MyApp/>
-    }
-}
 
 export default Root;
