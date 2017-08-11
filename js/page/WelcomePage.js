@@ -26,7 +26,7 @@ class WelcomePage extends React.Component {
                 actions: [
                     NavigationActions.navigate({routeName: 'Home'})
                 ]
-            })
+            });
             this.props.navigation.dispatch(resetAction)
         };
         return (
