@@ -10,8 +10,8 @@ import {
 class WorldPage extends React.Component {
 
     static navigationOptions = {
-        title: 'Food',
-        tabBarLabel: 'Food',
+        title: 'World',
+        tabBarLabel: 'World',
         tabBarIcon: () => (
             <Image
                 source={require('../../res/images/world.png')}
