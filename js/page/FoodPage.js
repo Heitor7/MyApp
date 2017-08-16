@@ -10,7 +10,7 @@ import {
 class FoodPage extends React.Component {
 
     static navigationOptions = {
-        title: 'Food',
+        headerTitle: 'Food',
         tabBarLabel: 'Food',
         tabBarIcon: () => (
             <Image
@@ -18,6 +18,9 @@ class FoodPage extends React.Component {
                 style={styles.icon}
             />
         ),
+        headerTitleStyle: {
+            alignSelf: 'center'
+        }
     };
 
     render() {

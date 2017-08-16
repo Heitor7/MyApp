@@ -10,7 +10,7 @@ import {
 class MapPage extends React.Component {
 
     static navigationOptions = {
-        title: 'Map',
+        headerTitle: 'Map',
         tabBarLabel: 'Map',
         tabBarIcon: () => (
             <Image
@@ -18,6 +18,9 @@ class MapPage extends React.Component {
                 style={styles.icon}
             />
         ),
+        headerTitleStyle: {
+            alignSelf:'center'
+        }
     };
 
     render() {

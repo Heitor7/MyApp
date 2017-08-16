@@ -10,7 +10,7 @@ import {
 class WorldPage extends React.Component {
 
     static navigationOptions = {
-        title: 'World',
+        headerTitle: 'World',
         tabBarLabel: 'World',
         tabBarIcon: () => (
             <Image
@@ -18,6 +18,9 @@ class WorldPage extends React.Component {
                 style={styles.icon}
             />
         ),
+        headerTitleStyle: {
+            alignSelf:'center'
+        }
     };
 
     render() {

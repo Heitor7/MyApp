@@ -10,10 +10,13 @@ import {
 class ChatPage extends React.Component {
 
     static navigationOptions = {
-        title: 'Chat with Lucy',
+        headerTitle: 'Chat with Lucy',
         headerRight: <View>
             <Image style={{marginRight: 20}} source={require('../../res/images/collect.png')}/>
         </View>,
+        headerTitleStyle: {
+            alignSelf:'center'
+        }
     };
 
     render() {

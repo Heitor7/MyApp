@@ -16,7 +16,7 @@ import WorldPage from './WorldPage';
 class HomePage extends React.Component {
 
     static navigationOptions = {
-        title: 'Home',
+        headerTitle: 'Home',
         tabBarLabel: 'Home',
         tabBarIcon: () => (
             <Image
@@ -24,6 +24,9 @@ class HomePage extends React.Component {
                 style={styles.icon}
             />
         ),
+        headerTitleStyle: {
+            alignSelf:'center'
+        }
     };
 
     render() {
@@ -67,6 +70,9 @@ const HomeTab = TabNavigator({
 }, {
     initialRouteName: 'Home',
     tabBarPosition: 'bottom',
+    tabBarOptions: {
+        showIcon: true,
+    },
 });
 
 export default HomeTab;
