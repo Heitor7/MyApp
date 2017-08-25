@@ -8,6 +8,10 @@ import GuideUtil from '../util/GuideUtil';
 
 export default class SplashPage extends React.Component {
 
+    static navigationOptions = {
+        header: null
+    };
+
     constructor() {
         super();
         this.dataCache = new DataCache();

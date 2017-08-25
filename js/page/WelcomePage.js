@@ -13,6 +13,10 @@ import {NavigationActions} from 'react-navigation'
 
 class WelcomePage extends React.Component {
 
+    static navigationOptions = {
+        header: null
+    };
+
     render() {
         const onButtonPress = () => {
             const resetAction = NavigationActions.reset({
