@@ -12,8 +12,14 @@ import {TabNavigator} from 'react-navigation';
 import FoodPage from './FoodPage';
 import MapPage from './MapPage';
 import WorldPage from './WorldPage';
+import DataCache from '../store/DataCache';
 
 class HomePage extends React.Component {
+
+    constructor() {
+        super();
+        this.dataCache = new DataCache();
+    }
 
     static navigationOptions = {
         headerTitle: 'Home',
@@ -25,9 +31,13 @@ class HomePage extends React.Component {
             />
         ),
         headerTitleStyle: {
-            alignSelf:'center'
+            alignSelf: 'center'
         }
     };
+
+    onClear() {
+        this.dataCache.removeCacheData('isFirst');
+    }
 
     render() {
         const {navigate} = this.props.navigation;
@@ -37,6 +47,10 @@ class HomePage extends React.Component {
                 <Button
                     onPress={() => navigate('Chat')}
                     title="Chat with Lucy"
+                />
+                <Button
+                    onPress={() => this.onClear()}
+                    title="Clear Cache"
                 />
             </View>
         );
@@ -51,7 +65,7 @@ const styles = StyleSheet.create({
     icon: {
         width: 26,
         height: 26,
-    }
+    },
 });
 
 const HomeTab = TabNavigator({

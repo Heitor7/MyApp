@@ -1,4 +1,4 @@
-export default class DataRepository {
+export default class DataRemote {
     fetchNetRepository(url) {
         return new Promise((resolve, reject) => {
             fetch(url)
@@ -11,5 +11,4 @@ export default class DataRepository {
                 })
         })
     }
-
 }

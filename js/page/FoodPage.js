@@ -8,16 +8,16 @@ import {
     Text,
     TextInput,
 } from 'react-native';
-import DataRepository from '../remote/DataRepository';
+import DataRemote from '../store/DataRemote';
 
-const URL = 'https://api.github.com/search/repositories?q='
+const URL = 'https://api.github.com/search/repositories?q=';
 const QUERY_STR = '&sort=stars';
 
 class FoodPage extends React.Component {
 
     constructor() {
         super();
-        this.dataRespository = new DataRepository();
+        this.dataRemote = new DataRemote();
         this.state = {
             result: ''
         }
@@ -39,7 +39,7 @@ class FoodPage extends React.Component {
 
     onLoad() {
         let url = this.getUrl(this.text);
-        this.dataRespository.fetchNetRepository(url)
+        this.dataRemote.fetchNetRepository(url)
             .then(result => {
                 this.setState({
                     result: JSON.stringify(result)

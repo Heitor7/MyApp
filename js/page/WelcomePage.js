@@ -13,14 +13,8 @@ import {NavigationActions} from 'react-navigation'
 
 class WelcomePage extends React.Component {
 
-    constructor() {
-        super();
-    };
-
     render() {
-        const {navigate} = this.props.navigation;
         const onButtonPress = () => {
-            navigate('Home');
             const resetAction = NavigationActions.reset({
                 index: 0,
                 actions: [
@@ -69,9 +63,13 @@ const styles = StyleSheet.create({
         height: 50,
         bottom: 200,
         alignSelf: 'center',
+        justifyContent:'center',
+        backgroundColor: '#90ee90',
+        borderRadius: 8,
     },
     btnText: {
-        fontSize: 18
+        fontSize: 18,
+        color: '#fff'
     },
 });
 

@@ -6,6 +6,7 @@ import {StackNavigator} from 'react-navigation';
 import HomePage from './HomePage';
 import ChatPage from './ChatPage';
 import WelcomePage from "./WelcomePage";
+import SplashPage from "./SplashPage";
 
 class Root extends React.Component {
     render() {
@@ -14,11 +15,12 @@ class Root extends React.Component {
 }
 
 const MyApp = StackNavigator({
+    Splash: {screen: SplashPage},
     Welcome: {screen: WelcomePage},
     Home: {screen: HomePage},
     Chat: {screen: ChatPage},
 }, {
-    initialRouteName: 'Welcome',
+    initialRouteName: 'Splash',
 });
 
 export default Root;
