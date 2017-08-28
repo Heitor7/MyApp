@@ -6,22 +6,16 @@ import {
     Image,
     StyleSheet,
     Text,
-    TextInput,
+    ListView,
 } from 'react-native';
+import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-view';
 import DataRemote from '../store/DataRemote';
+import DataCell from '../common/DataCell';
 
 const URL = 'https://api.github.com/search/repositories?q=';
 const QUERY_STR = '&sort=stars';
 
 class FoodPage extends React.Component {
-
-    constructor() {
-        super();
-        this.dataRemote = new DataRemote();
-        this.state = {
-            result: ''
-        }
-    }
 
     static navigationOptions = {
         headerTitle: 'Food',
@@ -37,37 +31,66 @@ class FoodPage extends React.Component {
         }
     };
 
-    onLoad() {
-        let url = this.getUrl(this.text);
+    render() {
+        return (
+            <View style={styles.container}>
+                <ScrollableTabView renderTabBar={() => <ScrollableTabBar/>}>
+                    <PopularTab tabLabel="Java">JAVA</PopularTab>
+                    <PopularTab tabLabel="iOS">IOS</PopularTab>
+                    <PopularTab tabLabel="Android">android</PopularTab>
+                    <PopularTab tabLabel="JavaScript">js</PopularTab>
+                </ScrollableTabView>
+            </View>
+        );
+    }
+}
+
+class PopularTab extends React.Component {
+    constructor() {
+        super();
+        this.dataRemote = new DataRemote();
+        this.state = {
+            result: '',
+            dataSource: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+        }
+    }
+
+    componentDidMount() {
+        this.loadData();
+    }
+
+    loadData() {
+        let url = URL + this.props.tabLabel + QUERY_STR;
         this.dataRemote.fetchNetRepository(url)
             .then(result => {
                 this.setState({
-                    result: JSON.stringify(result)
+                    dataSource: this.state.dataSource.cloneWithRows(result.items)
                 })
             })
             .catch(error => {
-                this.setState({
-                    result: JSON.stringify(error)
-                })
+                console.log(error);
             });
     }
 
-    getUrl(key) {
-        return URL + key + QUERY_STR;
+    renderRow(data) {
+        return <DataCell data={data}/>
     }
 
     render() {
         return (
             <View>
-                <Text style={styles.tips} onPress={() => this.onLoad()}>获取数据</Text>
-                <TextInput style={{height: 20, borderWidth: 1}} onChangeText={text => this.text = text}/>
-                <Text style={{height: 500}}>{this.state.result}</Text>
+                <ListView dataSource={this.state.dataSource}
+                          renderRow={(data) => this.renderRow(data)}
+                />
             </View>
         );
     }
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
     icon: {
         width: 26,
         height: 26,
